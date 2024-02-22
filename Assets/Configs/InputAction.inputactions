@@ -1,0 +1,126 @@
+{
+    "name": "InputAction",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "e759eaad-f279-45e7-8b33-558dad1cd973",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "73e69fb7-add0-4472-a82a-131aef42c1e9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Pointer",
+                    "type": "Value",
+                    "id": "47b37c79-df4d-4488-8517-6cbcf467ef9a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Keyboard(ArrowKey)",
+                    "id": "ec14f3cc-c26f-4bef-9ada-00740a8870bf",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "5b622a88-711e-4aec-a52a-fd148b44b14b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "d8bdaa95-f7a3-4014-8ba5-8c046de21a98",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "9d83de46-67a7-419e-8cfc-ae608a4ae9f6",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "bd19d15d-5619-4be5-bfd8-a984917bbc02",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2de633b5-3b6f-4748-8373-90621cbd3c58",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pointer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "id": "b7806a49-0986-42c7-88a2-d271fb9d5d2d",
+            "actions": [
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "3c307d4f-3978-4d2c-813a-67de02edb313",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "faf93707-2c0b-40e3-95cb-d30df4dabe42",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
