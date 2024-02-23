@@ -41,7 +41,6 @@ public class CameraControl : MonoBehaviour
     void OnPointer(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
-        Debug.Log(input);
 
         // øﬁ¬ ¿Ãµø
         if (input.x < padding)

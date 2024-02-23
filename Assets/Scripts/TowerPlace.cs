@@ -8,25 +8,21 @@ public class TowerPlace : MonoBehaviour
     , IPointerClickHandler
     , IPointerEnterHandler
     , IPointerExitHandler
-    , IPointerUpHandler
-    , IPointerDownHandler
-    , IPointerMoveHandler
 {
     [SerializeField] Renderer render;
     [SerializeField] Color normalColor;
     [SerializeField] Color hihglightColor;
+
+    [SerializeField] InGameUI buildUI;
 
     public UnityEvent OnPointerEntered;
     public UnityEvent OnPointerExited;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click");
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Debug.Log("Down");
+        InGameUI ui = Manager.UI.ShowInGameUI(buildUI);
+        ui.SetTarget(transform);
+        ui.SetOffset(new Vector3(0, 150, 0));
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -39,15 +35,5 @@ public class TowerPlace : MonoBehaviour
     {
         OnPointerExited?.Invoke();
         render.material.color = normalColor;
-    }
-
-    public void OnPointerMove(PointerEventData eventData)
-    {
-        //Debug.Log("Move");
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        Debug.Log("Up");
     }
 }
