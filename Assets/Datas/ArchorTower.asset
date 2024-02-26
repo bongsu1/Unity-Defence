@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26ff7ff5624a3b479684d372e0c3542, type: 3}
+  m_Name: ArchorTower
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3292592754954647201, guid: 01a24d2a06d62c0489a71dc8d9a48412, type: 3}
+  towers:
+  - name: Archor Lv1
+    cons: {fileID: 4300000, guid: ab4553bb4283e7840b83257b120cab3d, type: 3}
+    build: {fileID: 4300000, guid: dd09034417ae03142bd6a821cf15f334, type: 3}
+    damage: 0
+    range: 15
+    buildTime: 1
+    buildCost: 10
+    sellCost: 0
+  - name: Archor Lv2
+    cons: {fileID: 4300000, guid: 02c5c88f348e9ec40bc9f75b4607bd6c, type: 3}
+    build: {fileID: 4300000, guid: 994adfa9dfe55f249a376f7cd9cdaa6c, type: 3}
+    damage: 0
+    range: 20
+    buildTime: 2
+    buildCost: 20
+    sellCost: 3
+  - name: Archor Lv3
+    cons: {fileID: 4300000, guid: 9f6f07a475fa44345b665fc56302aa27, type: 3}
+    build: {fileID: 4300000, guid: bc4bf5978b0527b488b736a0812f1a0d, type: 3}
+    damage: 0
+    range: 25
+    buildTime: 3
+    buildCost: 30
+    sellCost: 5
+  - name: Archor Lv4
+    cons: {fileID: 4300000, guid: 64b0502d91761814b93e8a024126bc0e, type: 3}
+    build: {fileID: 4300000, guid: 28f528ecfe682dc45aad11043b368dfa, type: 3}
+    damage: 0
+    range: 30
+    buildTime: 4
+    buildCost: 40
+    sellCost: 10

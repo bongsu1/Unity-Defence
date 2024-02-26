@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26ff7ff5624a3b479684d372e0c3542, type: 3}
+  m_Name: CannonTower
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8524424846862524894, guid: 24934f61397129e449091627664bfd2a, type: 3}
+  towers:
+  - name: Cannon Lv1
+    cons: {fileID: 4300000, guid: 989701b84dfce9c4da39a33a9f9a4437, type: 3}
+    build: {fileID: 4300004, guid: be1108ed848814640ad1a5b7b8fa80ea, type: 3}
+    damage: 0
+    range: 15
+    buildTime: 3
+    buildCost: 0
+    sellCost: 0
+  - name: Cannon Lv2
+    cons: {fileID: 4300000, guid: c27b8f79ee0d5a042b6096cf36bf371f, type: 3}
+    build: {fileID: 4300000, guid: 257f854f145db2b4ebe40ddfa20f5024, type: 3}
+    damage: 0
+    range: 20
+    buildTime: 3
+    buildCost: 0
+    sellCost: 0
+  - name: Cannon Lv3
+    cons: {fileID: 4300000, guid: 74e96c4521d73784989d974b68cb9a8a, type: 3}
+    build: {fileID: 4300000, guid: 624b1250df12eab4789dd19d1ff90f7d, type: 3}
+    damage: 0
+    range: 25
+    buildTime: 3
+    buildCost: 0
+    sellCost: 0
+  - name: Cannon Lv4
+    cons: {fileID: 4300000, guid: 4fc54609bd2ade24a9ea9a9ae034076d, type: 3}
+    build: {fileID: 4300000, guid: b701252387deac544ad33cc4a95d0a0a, type: 3}
+    damage: 0
+    range: 30
+    buildTime: 3
+    buildCost: 0
+    sellCost: 0

@@ -11,6 +11,8 @@ public class BaseUI : MonoBehaviour
     protected Dictionary<string, Button> buttons;
     protected Dictionary<string, TMP_Text> texts;
     // TODO : add ui component
+    
+    // 일반화
     protected Dictionary<string, Component> components;
     Component[] children2;
 
@@ -49,6 +51,7 @@ public class BaseUI : MonoBehaviour
             }
         }
 
+        // 일반화
         components = new Dictionary<string, Component>();
         children2 = GetComponentsInChildren<Component>();
         foreach (Component child in children2)

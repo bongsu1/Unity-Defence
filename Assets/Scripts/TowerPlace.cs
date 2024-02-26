@@ -13,27 +13,43 @@ public class TowerPlace : MonoBehaviour
     [SerializeField] Color normalColor;
     [SerializeField] Color hihglightColor;
 
-    [SerializeField] InGameUI buildUI;
+    [SerializeField] BuildUI buildUI;
 
-    public UnityEvent OnPointerEntered;
-    public UnityEvent OnPointerExited;
+    [Header("Tower")]
+    [SerializeField] TowerData archorTower;
+    [SerializeField] TowerData cannonTower;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        InGameUI ui = Manager.UI.ShowInGameUI(buildUI);
+        BuildUI ui = Manager.UI.ShowInGameUI(buildUI);
         ui.SetTarget(transform);
-        ui.SetOffset(new Vector3(0, 150, 0));
+        ui.SetOffset(new Vector3(200, 0, 0));
+        ui.SetTowerPlace(this);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        OnPointerEntered?.Invoke();
         render.material.color = hihglightColor;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        OnPointerExited?.Invoke();
         render.material.color = normalColor;
+    }
+
+    public void BuildTower(string name)
+    {
+        if (name == "Archor")
+        {
+            gameObject.SetActive(false);
+            Tower tower = Instantiate(archorTower.prefab, transform.position, transform.rotation);
+            tower.SetTowerPlace(this);
+        }
+        else if(name == "Cannon")
+        {
+            gameObject.SetActive(false);
+            Tower tower = Instantiate(cannonTower.prefab, transform.position, transform.rotation);
+            tower.SetTowerPlace(this);
+        }
     }
 }
