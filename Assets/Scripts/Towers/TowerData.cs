@@ -20,6 +20,7 @@ public class TowerData : ScriptableObject
 
         public int damage;
         public float range;
+        public float coolTime;
 
         public float buildTime;
         public int buildCost;

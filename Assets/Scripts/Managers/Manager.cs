@@ -10,6 +10,9 @@ public class Manager : MonoBehaviour
     [SerializeField] UIManager uiManager;
     public static UIManager UI { get { return instance.uiManager; } }
 
+    [SerializeField] ResourceManager resourceManager;
+    public static ResourceManager Resource { get { return instance.resourceManager; } }
+
     private void Awake()
     {
         if (instance == null)

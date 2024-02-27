@@ -6,20 +6,54 @@ using UnityEngine.EventSystems;
 
 public class Tower : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] TowerData data;
+    [SerializeField] protected TowerData data;
     [SerializeField] MeshFilter meshFilter;
 
+    public List<Monster> monsterList = new List<Monster>(10);
+    [SerializeField] LayerMask monsterMask;
+
     private TowerPlace towerPlace;
-    private int level;
+    protected int level;
     private bool isUpgrading;
 
-    // Test
-    [SerializeField] private UpgradeUI upgradeUI;
+    protected virtual void OnEnable()
+    {
+        Upgrade();
+        checkRangeRoutine = StartCoroutine(CheckRangeRoutine());
+    }
 
     private void Start()
     {
-        Upgrade();
+        
     }
+
+    protected virtual void OnDisable()
+    {
+        StopCoroutine(checkRangeRoutine);
+    }
+
+    Coroutine checkRangeRoutine;
+    IEnumerator CheckRangeRoutine()
+    {
+        Collider[] colliders = new Collider[20];
+        while (true)
+        {
+            if (!isUpgrading)
+            {
+                monsterList.Clear();
+                int size = Physics.OverlapSphereNonAlloc(transform.position, data.towers[level - 1].range, colliders, monsterMask);
+                for (int i = 0; i < size; i++)
+                {
+                    Monster monster = colliders[i].GetComponent<Monster>();
+                    monsterList.Add(monster);
+                }
+            }
+            yield return new WaitForSeconds(data.towers[level - 1].coolTime);
+        }
+    }
+
+    // Test
+    [SerializeField] private UpgradeUI upgradeUI;
 
     public void SetTowerPlace(TowerPlace towerPlace)
     {
@@ -47,12 +81,12 @@ public class Tower : MonoBehaviour, IPointerClickHandler
 
     IEnumerator UpgradeRoutine(int level)
     {
+        this.level++;
         meshFilter.mesh = data.towers[level].cons;
         isUpgrading = true;
         yield return new WaitForSeconds(data.towers[level].buildTime);
         meshFilter.mesh = data.towers[level].build;
         isUpgrading = false;
-        this.level++;
     }
 
     // Test
@@ -68,7 +102,7 @@ public class Tower : MonoBehaviour, IPointerClickHandler
         ui.SetInfo(data, level);
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         if (level > 0)

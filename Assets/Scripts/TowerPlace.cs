@@ -37,19 +37,10 @@ public class TowerPlace : MonoBehaviour
         render.material.color = normalColor;
     }
 
-    public void BuildTower(string name)
+    public void BuildTower(TowerData data)
     {
-        if (name == "Archor")
-        {
-            gameObject.SetActive(false);
-            Tower tower = Instantiate(archorTower.prefab, transform.position, transform.rotation);
-            tower.SetTowerPlace(this);
-        }
-        else if(name == "Cannon")
-        {
-            gameObject.SetActive(false);
-            Tower tower = Instantiate(cannonTower.prefab, transform.position, transform.rotation);
-            tower.SetTowerPlace(this);
-        }
+        gameObject.SetActive(false);
+        Tower tower = Instantiate(data.prefab, transform.position, transform.rotation);
+        tower.SetTowerPlace(this);
     }
 }

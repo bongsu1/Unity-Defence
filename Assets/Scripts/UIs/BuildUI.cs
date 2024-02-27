@@ -13,13 +13,14 @@ public class BuildUI : InGameUI
 
         GetUI<Button>("ArchorButton").onClick.AddListener(() => BuildTower("Archor"));
         GetUI<Button>("CannonButton").onClick.AddListener(() => BuildTower("Cannon"));
-        GetUI<Button>("MageButton").onClick.AddListener(() => BuildTower("Mage"));
-        GetUI<Button>("BarrackButton").onClick.AddListener(() => BuildTower("Barrack"));
+        /*GetUI<Button>("MageButton").onClick.AddListener(() => BuildTower("Mage"));
+        GetUI<Button>("BarrackButton").onClick.AddListener(() => BuildTower("Barrack"));*/
     }
 
     public void BuildTower(string name)
     {
-        towerPlace.BuildTower(name);
+        TowerData data = Manager.Resource.Load<TowerData>($"Datas/{name}Tower"); 
+        towerPlace.BuildTower(data);
         CloseUI();
     }
 
