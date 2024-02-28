@@ -64,6 +64,11 @@ public class Tower : MonoBehaviour, IPointerClickHandler
     {
         Destroy(gameObject);
         towerPlace.gameObject.SetActive(true);
+
+        if (isUpgrading)
+        {
+            StopCoroutine(upgradeRoutine);
+        }
     }
 
     public void Upgrade()
@@ -74,7 +79,7 @@ public class Tower : MonoBehaviour, IPointerClickHandler
         if (isUpgrading)
             return;
 
-        StartCoroutine(UpgradeRoutine(level));
+        upgradeRoutine = StartCoroutine(UpgradeRoutine(level));
     }
 
     Coroutine upgradeRoutine;

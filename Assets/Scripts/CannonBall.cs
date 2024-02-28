@@ -24,10 +24,6 @@ public class CannonBall : MonoBehaviour
         while (rate < 1f)
         {
             rate += Time.deltaTime / time;
-            if (rate > 1f)
-            {
-                rate = 1f;
-            }
             Vector3 vec3 = Vector3.Lerp(startPos, endPos, rate);
             transform.position = new Vector3(vec3.x, transform.position.y, vec3.z);
 

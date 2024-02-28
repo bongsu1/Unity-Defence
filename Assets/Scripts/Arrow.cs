@@ -23,10 +23,6 @@ public class Arrow : MonoBehaviour
         while (rate < 1f)
         {
             rate += Time.deltaTime / time;
-            if (rate > 1f)
-            {
-                rate = 1f;
-            }
             transform.position = Vector3.Lerp(startPos, endPos, rate);
             if (target != null)
             {
